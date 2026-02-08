@@ -2,64 +2,68 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Police Clearance Verification</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verification - Police Clearance</title>
     <style>
-        body { font-family: Arial, sans-serif; background-color: #2c3e50; margin: 0; padding: 0; display: flex; flex-direction: column; align-items: center; }
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background-color: #d1d9e6; margin: 0; padding: 0; }
         
-        /* উপরের নীল বার */
-        .top-bar { width: 100%; background-color: #1a4a72; height: 50px; display: flex; align-items: center; padding-left: 10%; box-sizing: border-box; }
-        .top-bar img { height: 35px; margin-right: 15px; }
-        .top-bar span { color: white; font-size: 18px; font-weight: bold; }
-        
+        /* টপ ব্লু বার - কালার ম্যাচিং */
+        .top-bar { background-color: #004a80; height: 55px; display: flex; align-items: center; padding: 0 10%; color: white; font-weight: bold; font-size: 20px; }
+        .top-bar img { height: 40px; margin-right: 12px; }
+
         /* মেনু বার */
-        .nav-bar { width: 100%; background-color: #2c5e8a; height: 35px; display: flex; align-items: center; padding-left: 10%; box-sizing: border-box; }
-        .nav-bar a { color: white; text-decoration: none; font-size: 13px; margin-right: 20px; }
+        .nav-bar { background-color: #2e6692; height: 35px; display: flex; align-items: center; padding: 0 10%; gap: 20px; }
+        .nav-bar a { color: white; text-decoration: none; font-size: 13px; font-weight: 500; }
 
-        /* সার্টিফিকেট বক্স */
-        .certificate-container { background-color: #d8dee9; width: 100%; display: flex; justify-content: center; padding: 40px 0; min-height: 100vh; }
-        .certificate { background: white; width: 850px; padding: 60px; border: 1px solid #ccc; box-shadow: 0 0 15px rgba(0,0,0,0.2); position: relative; }
+        .container { display: flex; justify-content: center; padding: 30px 0; }
         
-        .header { text-align: center; margin-bottom: 30px; }
-        .gov-logo { width: 80px; margin-bottom: 10px; }
-        .gov-text { font-size: 18px; font-weight: bold; color: #333; margin-bottom: 5px; }
-        
-        .qr-section { text-align: left; margin: 20px 0; }
-        .qr-placeholder { width: 100px; height: 100px; border: 1px solid #000; padding: 5px; }
+        /* সার্টিফিকেট পেপার ডিজাইন - ফন্ট প্লেসমেন্ট */
+        .certificate { background: white; width: 8.5in; min-height: 11in; padding: 0.8in; box-shadow: 0 0 10px rgba(0,0,0,0.1); border: 1px solid #ddd; position: relative; box-sizing: border-box; }
 
-        .title { text-align: center; font-weight: bold; text-decoration: underline; font-size: 16px; margin: 20px 0; }
+        .header { text-align: center; margin-bottom: 25px; }
+        .gov-logo { width: 75px; margin-bottom: 5px; }
+        .gov-text { font-size: 18px; font-weight: bold; color: #333; margin: 2px 0; }
+        .sub-header { font-size: 15px; color: #444; margin-top: 3px; }
+
+        /* পুলিশ স্টেশন ও ডিস্ট্রিক্ট ফরম্যাট (Capitalize Each Word) */
+        .ps-dist { font-size: 14px; color: #000; text-transform: capitalize; }
+
+        .info-row { display: flex; justify-content: space-between; margin: 20px 0; font-size: 13px; font-weight: 600; }
+
+        .cert-title { text-align: center; font-size: 17px; font-weight: bold; text-decoration: underline; margin: 30px 0; }
+
         .content { font-size: 15px; line-height: 1.8; text-align: justify; color: #000; }
-        
-        .footer-table { width: 100%; margin-top: 50px; font-size: 14px; }
-        .red-notice { color: red; font-size: 11px; text-align: center; margin-top: 40px; font-style: italic; font-weight: bold; }
+        .content strong { font-weight: 700; }
+
+        .footer-section { margin-top: 60px; display: flex; justify-content: space-between; font-size: 13px; line-height: 1.5; font-weight: 600; }
+
+        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 50px; border-top: 1px solid #ccc; padding-top: 10px; font-style: italic; }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg">
-        <span>Police Clearance</span>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" alt="Gov Logo">
+        Police Clearance
     </div>
     <div class="nav-bar">
-        <a href="#">Home</a><a href="#">Apply</a><a href="#">My Account</a><a href="#">Contact us</a>
+        <a href="#">Home</a><a href="#">Apply</a><a href="#">My Account</a><a href="#">Contact Us</a>
     </div>
 
-    <div class="certificate-container">
+    <div class="container">
         <div class="certificate">
             <div class="header">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="gov-logo">
                 <div class="gov-text">GOVERNMENT OF THE PEOPLE'S REPUBLIC OF BANGLADESH</div>
-                <div style="font-size: 14px;">{{ d['Police Station'] }} Police Station</div>
-                <div style="font-size: 14px;">{{ d['District'] }}</div>
+                <div class="ps-dist">{{ d['Police Station'] }} Police Station</div>
+                <div class="ps-dist">{{ d['District'] }}</div>
             </div>
 
-            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
-                <div class="qr-section">
-                    <div style="font-size: 12px; margin-bottom: 5px;">Ref No: {{ d['Ref No'] }}</div>
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=100x100&data={{ request.url }}" style="width: 100px;">
-                </div>
-                <div style="font-size: 12px;">Dated: {{ d['IssueDate'] if d['IssueDate'] else '28-DEC-2025' }}</div>
+            <div class="info-row">
+                <div>Ref No: {{ d['Ref No'] }}</div>
+                <div>Dated: {{ d['IssueDate'] if d['IssueDate'] else '28-DEC-2025' }}</div>
             </div>
 
-            <div class="title">POLICE CLEARANCE CERTIFICATE</div>
+            <div class="cert-title">POLICE CLEARANCE CERTIFICATE</div>
 
             <div class="content">
                 The character and antecedents of <strong>Mr. {{ d['NAME'] }}</strong>, Son of <strong>{{ d["Father's name"] }}</strong>, Village/Area: <strong>{{ d['Village'] }}</strong>, P/O: <strong>{{ d['Post Office'] }}</strong>, Post Code: <strong>{{ d['Post Code'] }}</strong>, P/S: <strong>{{ d['Police Station'] }}</strong>, District: <strong>{{ d['District'] }}</strong>, holder of Bangladesh International Passport No: <strong>{{ d['PASSPORT'] }}</strong> Issued at <strong>{{ d['District'] }}</strong> have been verified and there is no adverse information against him on record.
@@ -67,13 +71,10 @@
                 This certificate is issued in pursuance of Ministry of Home Affairs Memo No. Nirdesh-2/75-Pt 2152-Bohi(1), dated the 19th May, 1977.
             </div>
 
-            <table class="footer-table">
-                <tr>
-                    <td style="width: 40%;">Superintendent of Police<br>District Special Branch, {{ d['District'] }}</td>
-                    <td style="text-align: center; font-style: italic;">Seal</td>
-                    <td style="text-align: right; width: 40%;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</td>
-                </tr>
-            </table>
+            <div class="footer-section">
+                <div>Superintendent of Police<br>District Special Branch, {{ d['District'] }}</div>
+                <div style="text-align: right;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</div>
+            </div>
 
             <div class="red-notice">
                 This is a digital copy of the unsigned certificate issued by Bangladesh Police Online Police Clearance Management System. The printed original must contain seal and signature of the designated officials.
