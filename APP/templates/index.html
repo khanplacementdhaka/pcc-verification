@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0, user-scalable=yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Verification - Police Clearance</title>
     <style>
         body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #2b3e50; margin: 0; padding: 0; }
@@ -15,48 +15,45 @@
 
         .main-wrapper { background-color: #E4E3E3; width: 100%; min-height: 100vh; padding: 15px 0; display: flex; justify-content: center; }
         
-        .certificate { background-color: #FFFFFF; width: 98%; max-width: 800px; padding: 30px; border: 1px solid #ccc; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative; box-sizing: border-box; }
+        .certificate { background-color: #FFFFFF; width: 98%; max-width: 800px; padding: 40px; border: 1px solid #ccc; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative; box-sizing: border-box; }
 
-        .print-btn { position: absolute; top: 15px; right: 15px; background: #FFFFFF; padding: 5px; border: 1px solid #ddd; border-radius: 4px; z-index: 10; }
+        .print-btn { position: absolute; top: 15px; right: 15px; background: #FFFFFF; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
 
         .header { text-align: center; margin-bottom: 20px; }
         .gov-logo { width: 65px; }
         .gov-text { font-size: 15px; font-weight: bold; color: #000; margin-top: 5px; line-height: 1.3; }
 
-        .info-row { display: flex; justify-content: space-between; align-items: flex-start; margin: 20px 0; }
-        .ref-section { font-size: 13px; font-weight: bold; flex: 1; }
+        /* তথ্য এবং কিউআর কোড সেকশন */
+        .info-row { display: flex; justify-content: space-between; align-items: flex-end; margin: 25px 0; width: 100%; }
         
-        /* QR Code Styling */
-        .qr-box { margin-top: 8px; }
-        .qr-box img { 
-            width: 110px; 
-            height: 110px; 
-            border: 1px solid #000; 
-            display: block;
-            background-color: #fff;
-        }
+        /* QR ও Ref No এর গ্রুপ */
+        .qr-ref-group { display: flex; flex-direction: column; align-items: flex-start; }
+        .qr-box img { width: 110px; height: 110px; border: none; display: block; margin-bottom: 5px; }
+        .ref-text { font-size: 13px; font-weight: bold; color: #000; }
 
-        .date-section { font-size: 13px; font-weight: bold; text-align: right; }
+        /* Dated সেকশন */
+        .date-section { font-size: 13px; font-weight: bold; color: #000; padding-bottom: 2px; }
 
-        .cert-title { text-align: center; font-size: 16px; font-weight: bold; text-decoration: underline; margin: 25px 0; clear: both; }
-        .content { font-size: 14px; line-height: 1.7; text-align: justify; color: #000; word-wrap: break-word; }
+        .cert-title { text-align: center; font-size: 17px; font-weight: bold; text-decoration: underline; margin: 30px 0; clear: both; }
+        .content { font-size: 15px; line-height: 1.8; text-align: justify; color: #000; word-wrap: break-word; }
         
-        .footer-section { margin-top: 40px; display: flex; justify-content: space-between; font-size: 12px; font-weight: bold; gap: 10px; }
+        .footer-section { margin-top: 50px; display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; gap: 10px; }
 
-        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 40px; border-top: 1px solid #eee; padding-top: 10px; font-style: italic; line-height: 1.4; }
+        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 15px; font-style: italic; line-height: 1.4; }
 
-        /* মোবাইল জুম এবং ভিউ ফিক্স */
+        /* মোবাইল ভিউ ফিক্স (যেন এক লাইনে থাকে) */
         @media (max-width: 600px) {
-            .certificate { padding: 15px; width: 95%; }
-            .gov-text { font-size: 13px; }
-            .info-row { flex-direction: row; justify-content: space-between; }
-            .footer-section { flex-direction: row; font-size: 10px; }
+            .certificate { padding: 20px 15px; }
+            .info-row { flex-direction: row; justify-content: space-between; align-items: flex-end; }
+            .ref-text, .date-section { font-size: 11px; } /* ফন্ট একটু ছোট করা হলো যেন মোবাইল স্ক্রিনে এক লাইনে আটে */
+            .qr-box img { width: 90px; height: 90px; }
+            .footer-section { font-size: 11px; }
         }
     </style>
 </head>
 <body>
     <div class="top-bar">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" alt="Logo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg">
         Police Clearance
     </div>
     <div class="nav-bar">
@@ -72,16 +69,17 @@
             <div class="header">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg" class="gov-logo">
                 <div class="gov-text">GOVERNMENT OF THE PEOPLE'S REPUBLIC OF BANGLADESH</div>
-                <div style="font-size: 13px; margin-top: 5px;">{{ d['Police Station'] }} Police Station, {{ d['District'] }}</div>
+                <div style="font-size: 14px; margin-top: 5px;">{{ d['Police Station'] }} Police Station, {{ d['District'] }}</div>
             </div>
 
             <div class="info-row">
-                <div class="ref-section">
-                    Ref No: {{ d['Ref No'] }}
+                <div class="qr-ref-group">
                     <div class="qr-box">
-                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ request.url }}" alt="QR Code">
+                        <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{ request.url }}" alt="QR">
                     </div>
+                    <div class="ref-text">Ref No: {{ d['Ref No'] }}</div>
                 </div>
+                
                 <div class="date-section">Dated: {{ d['DATED'] }}</div>
             </div>
 
@@ -94,8 +92,8 @@
             </div>
 
             <div class="footer-section">
-                <div style="width: 45%;">Superintendent of Police<br>District Special Branch, {{ d['District'] }}</div>
-                <div style="text-align: right; width: 45%;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</div>
+                <div style="width: 48%;">Superintendent of Police<br>District Special Branch, {{ d['District'] }}</div>
+                <div style="text-align: right; width: 48%;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</div>
             </div>
 
             <div class="red-notice">
