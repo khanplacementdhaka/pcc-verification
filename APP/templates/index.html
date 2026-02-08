@@ -5,49 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
     <title>Verification - Police Clearance</title>
     <style>
-        body { font-family: 'Segoe UI', Arial, sans-serif; background-color: #2b3e50; margin: 0; padding: 0; }
+        body { 
+            font-family: 'Segoe UI', Arial, sans-serif; 
+            /* ডান-বামে নীল গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
+            background: linear-gradient(to right, #1e3c72, #2a5298, #1e3c72); 
+            margin: 0; 
+            padding: 0; 
+        }
         
-        .top-bar { background-color: #003366; height: 60px; display: flex; align-items: center; padding: 0 5%; color: white; font-size: 18px; font-weight: bold; }
+        .top-bar { background-color: #003366; height: 60px; display: flex; align-items: center; padding: 0 5%; color: white; font-size: 18px; font-weight: bold; border-bottom: 1px solid #1a4a72; }
         .top-bar img { height: 35px; margin-right: 10px; }
 
         .nav-bar { background-color: #336699; height: 35px; display: flex; align-items: center; padding: 0 5%; gap: 15px; overflow-x: auto; }
         .nav-bar a { color: white; text-decoration: none; font-size: 12px; white-space: nowrap; }
 
-        .main-wrapper { background-color: #E4E3E3; width: 100%; min-height: 100vh; padding: 15px 0; display: flex; justify-content: center; }
+        /* সার্টিফিকেটের বাইরের অংশ */
+        .main-wrapper { 
+            width: 100%; 
+            min-height: 100vh; 
+            padding: 30px 0; 
+            display: flex; 
+            justify-content: center; 
+        }
         
-        .certificate { background-color: #FFFFFF; width: 98%; max-width: 800px; padding: 40px; border: 1px solid #ccc; box-shadow: 0 4px 10px rgba(0,0,0,0.1); position: relative; box-sizing: border-box; }
+        /* সার্টিফিকেট পেজ - আপনার দেওয়া অফ-হোয়াইট কালার */
+        .certificate { 
+            background-color: #E4E3E3; 
+            width: 98%; 
+            max-width: 800px; 
+            padding: 45px; 
+            border: 1px solid #ccc; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            position: relative; 
+            box-sizing: border-box; 
+        }
 
-        .print-btn { position: absolute; top: 15px; right: 15px; background: #FFFFFF; padding: 5px; border: 1px solid #ddd; border-radius: 4px; }
+        .print-btn { position: absolute; top: 15px; right: 15px; background: #fff; padding: 5px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }
 
-        .header { text-align: center; margin-bottom: 20px; }
-        .gov-logo { width: 65px; }
-        .gov-text { font-size: 15px; font-weight: bold; color: #000; margin-top: 5px; line-height: 1.3; }
+        .header { text-align: center; margin-bottom: 25px; }
+        .gov-logo { width: 70px; }
+        .gov-text { font-size: 16px; font-weight: bold; color: #000; margin-top: 5px; line-height: 1.3; }
 
-        /* তথ্য এবং কিউআর কোড সেকশন */
-        .info-row { display: flex; justify-content: space-between; align-items: flex-end; margin: 25px 0; width: 100%; }
+        .info-row { display: flex; justify-content: space-between; align-items: flex-end; margin: 30px 0; }
         
-        /* QR ও Ref No এর গ্রুপ */
         .qr-ref-group { display: flex; flex-direction: column; align-items: flex-start; }
-        .qr-box img { width: 110px; height: 110px; border: none; display: block; margin-bottom: 5px; }
-        .ref-text { font-size: 13px; font-weight: bold; color: #000; }
+        .qr-box img { width: 115px; height: 115px; border: none; display: block; margin-bottom: 5px; background: transparent; }
+        .ref-text { font-size: 14px; font-weight: bold; color: #000; }
 
-        /* Dated সেকশন */
-        .date-section { font-size: 13px; font-weight: bold; color: #000; padding-bottom: 2px; }
+        .date-section { font-size: 14px; font-weight: bold; color: #000; padding-bottom: 2px; }
 
-        .cert-title { text-align: center; font-size: 17px; font-weight: bold; text-decoration: underline; margin: 30px 0; clear: both; }
-        .content { font-size: 15px; line-height: 1.8; text-align: justify; color: #000; word-wrap: break-word; }
+        .cert-title { text-align: center; font-size: 18px; font-weight: bold; text-decoration: underline; margin: 35px 0; }
+        .content { font-size: 15.5px; line-height: 1.8; text-align: justify; color: #000; }
         
-        .footer-section { margin-top: 50px; display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; gap: 10px; }
+        .footer-section { margin-top: 60px; display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; }
 
-        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 50px; border-top: 1px solid #eee; padding-top: 15px; font-style: italic; line-height: 1.4; }
+        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 50px; border-top: 1px solid #ccc; padding-top: 15px; font-style: italic; }
 
-        /* মোবাইল ভিউ ফিক্স (যেন এক লাইনে থাকে) */
+        /* মোবাইল ফিক্স */
         @media (max-width: 600px) {
-            .certificate { padding: 20px 15px; }
+            .certificate { padding: 25px 15px; width: 95%; }
             .info-row { flex-direction: row; justify-content: space-between; align-items: flex-end; }
-            .ref-text, .date-section { font-size: 11px; } /* ফন্ট একটু ছোট করা হলো যেন মোবাইল স্ক্রিনে এক লাইনে আটে */
-            .qr-box img { width: 90px; height: 90px; }
-            .footer-section { font-size: 11px; }
+            .ref-text, .date-section { font-size: 11.5px; }
+            .qr-box img { width: 95px; height: 95px; }
+            .content { font-size: 14px; }
         }
     </style>
 </head>
@@ -62,7 +82,7 @@
 
     <div class="main-wrapper">
         <div class="certificate">
-            <div class="print-btn">
+            <div class="print-btn" onclick="window.print()">
                 <img src="https://cdn-icons-png.flaticon.com/512/446/446991.png" width="20" alt="Print">
             </div>
 
@@ -79,7 +99,6 @@
                     </div>
                     <div class="ref-text">Ref No: {{ d['Ref No'] }}</div>
                 </div>
-                
                 <div class="date-section">Dated: {{ d['DATED'] }}</div>
             </div>
 
