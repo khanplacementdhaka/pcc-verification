@@ -7,67 +7,78 @@
     <style>
         body { 
             font-family: 'Segoe UI', Arial, sans-serif; 
-            /* ডান-বামে নীল গ্রেডিয়েন্ট ব্যাকগ্রাউন্ড */
-            background: linear-gradient(to right, #1e3c72, #2a5298, #1e3c72); 
+            /* আপনার দেওয়া ব্লু ইমেজটি ব্যাকগ্রাউন্ড হিসেবে ব্যবহার করা হয়েছে */
+            background-image: url('https://raw.githubusercontent.com/khanplacementdhaka/pcc-verification/main/blue%20je%20design%20ta%20ache%20seta%20ami%20tomake%20upload%20dicchi.jpg');
+            background-size: cover;
+            background-attachment: fixed;
             margin: 0; 
             padding: 0; 
         }
         
-        .top-bar { background-color: #003366; height: 60px; display: flex; align-items: center; padding: 0 5%; color: white; font-size: 18px; font-weight: bold; border-bottom: 1px solid #1a4a72; }
+        /* টপ নেভিগেশন বার */
+        .top-bar { background-color: #003366; height: 60px; display: flex; align-items: center; padding: 0 5%; color: white; font-size: 18px; font-weight: bold; }
         .top-bar img { height: 35px; margin-right: 10px; }
 
         .nav-bar { background-color: #336699; height: 35px; display: flex; align-items: center; padding: 0 5%; gap: 15px; overflow-x: auto; }
         .nav-bar a { color: white; text-decoration: none; font-size: 12px; white-space: nowrap; }
 
-        /* সার্টিফিকেটের বাইরের অংশ */
+        /* সার্টিফিকেটের বাইরের রেঞ্জ */
         .main-wrapper { 
             width: 100%; 
             min-height: 100vh; 
-            padding: 30px 0; 
+            padding: 20px 0; 
             display: flex; 
             justify-content: center; 
         }
         
-        /* সার্টিফিকেট পেজ - আপনার দেওয়া অফ-হোয়াইট কালার */
+        /* সার্টিফিকেট পেজ - অফ হোয়াইট কালার */
         .certificate { 
             background-color: #E4E3E3; 
-            width: 98%; 
-            max-width: 800px; 
-            padding: 45px; 
+            width: 95%; 
+            max-width: 850px; 
+            padding: 40px; 
             border: 1px solid #ccc; 
-            box-shadow: 0 10px 25px rgba(0,0,0,0.3); 
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5); 
             position: relative; 
             box-sizing: border-box; 
         }
 
-        .print-btn { position: absolute; top: 15px; right: 15px; background: #fff; padding: 5px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }
+        /* প্রিন্টার লোগো ডান পাশে */
+        .print-btn { 
+            position: absolute; 
+            top: 20px; 
+            right: 20px; 
+            cursor: pointer; 
+        }
 
-        .header { text-align: center; margin-bottom: 25px; }
-        .gov-logo { width: 70px; }
-        .gov-text { font-size: 16px; font-weight: bold; color: #000; margin-top: 5px; line-height: 1.3; }
+        .header { text-align: center; margin-bottom: 20px; }
+        .gov-logo { width: 70px; margin-bottom: 10px; }
+        .gov-text { font-size: 16px; font-weight: bold; color: #000; margin-top: 5px; }
 
+        /* QR এবং Ref No প্লেসমেন্ট */
         .info-row { display: flex; justify-content: space-between; align-items: flex-end; margin: 30px 0; }
         
         .qr-ref-group { display: flex; flex-direction: column; align-items: flex-start; }
-        .qr-box img { width: 115px; height: 115px; border: none; display: block; margin-bottom: 5px; background: transparent; }
-        .ref-text { font-size: 14px; font-weight: bold; color: #000; }
+        .qr-box img { width: 115px; height: 115px; display: block; margin-bottom: 5px; border: none; }
+        .ref-text { font-size: 13.5px; font-weight: bold; color: #000; }
 
-        .date-section { font-size: 14px; font-weight: bold; color: #000; padding-bottom: 2px; }
+        .date-section { font-size: 13.5px; font-weight: bold; color: #000; }
 
         .cert-title { text-align: center; font-size: 18px; font-weight: bold; text-decoration: underline; margin: 35px 0; }
         .content { font-size: 15.5px; line-height: 1.8; text-align: justify; color: #000; }
         
-        .footer-section { margin-top: 60px; display: flex; justify-content: space-between; font-size: 14px; font-weight: bold; }
+        .footer-section { margin-top: 50px; display: flex; justify-content: space-between; font-size: 13px; font-weight: bold; }
 
-        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 50px; border-top: 1px solid #ccc; padding-top: 15px; font-style: italic; }
+        .red-notice { color: #d00000; font-size: 11px; text-align: center; margin-top: 45px; border-top: 1px solid #bbb; padding-top: 15px; font-style: italic; }
 
-        /* মোবাইল ফিক্স */
+        /* মোবাইল স্ক্রিন ফিক্স (সব এক লাইনে রাখার জন্য) */
         @media (max-width: 600px) {
-            .certificate { padding: 25px 15px; width: 95%; }
+            .certificate { padding: 20px 15px; width: 96%; }
             .info-row { flex-direction: row; justify-content: space-between; align-items: flex-end; }
-            .ref-text, .date-section { font-size: 11.5px; }
-            .qr-box img { width: 95px; height: 95px; }
-            .content { font-size: 14px; }
+            .ref-text, .date-section { font-size: 11px; } 
+            .qr-box img { width: 90px; height: 90px; }
+            .content { font-size: 14px; line-height: 1.6; }
+            .footer-section { font-size: 10px; }
         }
     </style>
 </head>
@@ -83,7 +94,7 @@
     <div class="main-wrapper">
         <div class="certificate">
             <div class="print-btn" onclick="window.print()">
-                <img src="https://cdn-icons-png.flaticon.com/512/446/446991.png" width="20" alt="Print">
+                <img src="https://raw.githubusercontent.com/khanplacementdhaka/pcc-verification/main/printter%20logo.jpg" width="28">
             </div>
 
             <div class="header">
@@ -111,8 +122,8 @@
             </div>
 
             <div class="footer-section">
-                <div style="width: 48%;">Superintendent of Police<br>District Special Branch, {{ d['District'] }}</div>
-                <div style="text-align: right; width: 48%;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</div>
+                <div style="width: 45%;">Superintendent of Police<br>District Special Branch, {{ d['District'] }}</div>
+                <div style="text-align: right; width: 45%;">Officer-in-Charge<br>{{ d['Police Station'] }} Police Station</div>
             </div>
 
             <div class="red-notice">
