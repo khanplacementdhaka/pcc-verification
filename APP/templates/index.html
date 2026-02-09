@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 <title>Police Clearance</title>
 
 <style>
@@ -20,7 +20,7 @@ body{
 /* ===== HEADER ===== */
 .header{
   background:#d9d9d9;
-  height:60px;
+  height:58px;
   display:flex;
   justify-content:center;
   border-bottom:1px solid #bfbfbf;
@@ -35,11 +35,11 @@ body{
 }
 
 .header-inner img{
-  width:40px;
+  width:38px;
 }
 
 .header-inner span{
-  font-size:22px;
+  font-size:20px;
   font-weight:700;
   color:#1f3a63;
 }
@@ -47,7 +47,7 @@ body{
 /* ===== NAV ===== */
 .nav{
   background:#2e5c8f;
-  height:38px;
+  height:36px;
   display:flex;
   justify-content:center;
 }
@@ -57,13 +57,13 @@ body{
   max-width:95%;
   display:flex;
   align-items:center;
-  gap:18px;
+  gap:16px;
 }
 
 .nav-inner a{
   color:white;
   text-decoration:none;
-  font-size:14px;
+  font-size:13px;
 }
 
 /* ===== PRINT BAR ===== */
@@ -75,17 +75,17 @@ body{
 .print-bar{
   width:1100px;
   max-width:95%;
-  height:55px;
-  margin:25px auto 0;
+  height:48px;
+  margin:18px auto 0;
   background:#e3e3e3;
   border:1px solid #bfbfbf;
   display:flex;
   align-items:center;
-  padding-left:15px;
+  padding-left:14px;
 }
 
 .print-icon{
-  font-size:26px;
+  font-size:22px;
   cursor:pointer;
 }
 
@@ -93,16 +93,16 @@ body{
 .wrapper{
   display:flex;
   justify-content:center;
-  padding:15px 10px 60px;
+  padding:10px 8px 30px;
 }
 
 .certificate{
   width:1100px;
   max-width:95%;
   background:#e9e7e5;
-  padding:70px 160px;
+  padding:60px 140px;
   border:1px solid #bfbfbf;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  box-shadow:0 5px 16px rgba(0,0,0,.22);
 }
 
 .cert-header{
@@ -110,20 +110,19 @@ body{
 }
 
 .cert-header img{
-  width:70px;
-  margin-bottom:12px;
+  width:65px;
+  margin-bottom:10px;
 }
 
-/* 👇 HEADING BIGGER + 2 LINE LOOK */
 .cert-header h2{
-  font-size:24px;
+  font-size:23px;
   font-weight:800;
-  line-height:1.35;
+  line-height:1.3;
 }
 
 .station{
-  margin-top:8px;
-  font-size:15px;
+  margin-top:6px;
+  font-size:14px;
 }
 
 /* INFO */
@@ -131,20 +130,20 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:flex-end;
-  margin:45px 0;
+  margin:38px 0;
 }
 
 .qr img{
-  width:110px;
+  width:100px;
 }
 
 .ref{
-  font-size:14px;
+  font-size:13px;
   margin-top:6px;
 }
 
 .date{
-  font-size:14px;
+  font-size:13px;
 }
 
 /* TITLE */
@@ -152,121 +151,128 @@ body{
   text-align:center;
   font-weight:700;
   text-decoration:underline;
-  margin:40px 0;
-  font-size:20px;
+  margin:32px 0;
+  font-size:18px;
 }
 
 /* CONTENT */
 .content{
-  font-size:16px;
-  line-height:1.9;
+  font-size:15px;
+  line-height:1.75;
   text-align:justify;
 }
 
 /* FOOTER */
 .footer{
-  margin-top:80px;
+  margin-top:65px;
   display:flex;
   justify-content:space-between;
-  font-size:14px;
+  font-size:13px;
   font-weight:600;
 }
 
 .notice{
-  margin-top:45px;
-  font-size:12px;
+  margin-top:40px;
+  font-size:11px;
   color:red;
   text-align:center;
   font-style:italic;
 }
 
-/* ===== TABLET ===== */
-@media(max-width:900px){
-
-.certificate{
-  padding:50px 60px;
-}
-
-.cert-header h2{
-  font-size:20px;
-}
-
-.content{
-  font-size:14px;
-}
-
-}
-
-/* ===== MOBILE (FONT HALF SIZE FEEL) ===== */
+/* ===== MOBILE FULL SCREEN FIT MODE ===== */
 @media(max-width:600px){
 
+body{
+  background:#e9e7e5;
+}
+
 .header{
-  height:55px;
+  height:46px;
 }
 
 .header-inner span{
-  font-size:17px;
-}
-
-.nav-inner a{
-  font-size:12px;
-}
-
-.print-bar{
-  height:48px;
-}
-
-.certificate{
-  padding:28px 18px;
-}
-
-.cert-header img{
-  width:50px;
-}
-
-.cert-header h2{
-  font-size:18px;
-}
-
-.station{
-  font-size:12px;
-}
-
-.info-row{
-  margin:25px 0;
-}
-
-.qr img{
-  width:75px;
-}
-
-.ref{
-  font-size:11px;
-}
-
-.date{
-  font-size:11px;
-}
-
-.title{
   font-size:15px;
 }
 
-/* 👇 MAIN TEXT HALF LOOK */
+.header-inner img{
+  width:30px;
+}
+
+.nav{
+  height:32px;
+}
+
+.nav-inner a{
+  font-size:10px;
+}
+
+.print-bar{
+  height:38px;
+  margin:10px auto 0;
+}
+
+.print-icon{
+  font-size:18px;
+}
+
+.wrapper{
+  padding:6px;
+}
+
+.certificate{
+  padding:18px 12px;
+  box-shadow:none;
+}
+
+.cert-header img{
+  width:42px;
+}
+
+.cert-header h2{
+  font-size:15px;
+}
+
+.station{
+  font-size:10px;
+}
+
+.info-row{
+  margin:14px 0;
+}
+
+.qr img{
+  width:60px;
+}
+
+.ref{
+  font-size:9px;
+}
+
+.date{
+  font-size:9px;
+}
+
+.title{
+  font-size:13px;
+  margin:16px 0;
+}
+
 .content{
-  font-size:12px;
-  line-height:1.6;
+  font-size:9.5px;
+  line-height:1.45;
 }
 
 .footer{
-  font-size:11px;
+  font-size:9px;
   flex-direction:column;
-  gap:14px;
+  gap:10px;
   text-align:center;
+  margin-top:28px;
 }
 
 .notice{
-  font-size:10px;
+  font-size:8px;
+  margin-top:20px;
 }
 
 }
@@ -293,7 +299,6 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-inner">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg">
@@ -301,7 +306,6 @@ body{
   </div>
 </div>
 
-<!-- NAV -->
 <div class="nav">
   <div class="nav-inner">
     <a href="#">Home</a>
@@ -311,7 +315,6 @@ body{
   </div>
 </div>
 
-<!-- PRINT BAR -->
 <div class="print-bar-wrap">
   <div class="print-bar">
     <div class="print-icon" onclick="window.print()">🖨️</div>
