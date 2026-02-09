@@ -17,7 +17,7 @@ body{
   background:#e6e6e6;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   background:#d9d9d9;
   height:60px;
@@ -34,9 +34,7 @@ body{
   gap:10px;
 }
 
-.header-inner img{
-  width:40px;
-}
+.header-inner img{ width:40px; }
 
 .header-inner span{
   font-size:22px;
@@ -44,7 +42,7 @@ body{
   color:#1f3a63;
 }
 
-/* ===== NAV ===== */
+/* NAV */
 .nav{
   background:#2e5c8f;
   height:38px;
@@ -66,11 +64,8 @@ body{
   font-size:14px;
 }
 
-/* ===== PRINT BAR ===== */
-.print-bar-wrap{
-  display:flex;
-  justify-content:center;
-}
+/* PRINT BAR */
+.print-bar-wrap{ display:flex; justify-content:center; }
 
 .print-bar{
   width:1100px;
@@ -84,17 +79,10 @@ body{
   padding-left:15px;
 }
 
-.print-icon{
-  font-size:26px;
-  cursor:pointer;
-}
+.print-icon{ font-size:26px; cursor:pointer; }
 
-/* ===== CERTIFICATE ===== */
-.wrapper{
-  display:flex;
-  justify-content:center;
-  padding:15px 10px 60px;
-}
+/* CERTIFICATE */
+.wrapper{ display:flex; justify-content:center; padding:15px 10px 60px; }
 
 .certificate{
   width:1100px;
@@ -105,25 +93,17 @@ body{
   box-shadow:0 6px 20px rgba(0,0,0,.25);
 }
 
-.cert-header{
-  text-align:center;
-}
+.cert-header{ text-align:center; }
 
-.cert-header img{
-  width:70px;
-  margin-bottom:10px;
-}
+.cert-header img{ width:70px; margin-bottom:10px; }
 
 .cert-header h2{
-  font-size:24px;
+  font-size:22px;
   font-weight:800;
-  line-height:1.3;
+  line-height:1.4;
 }
 
-.station{
-  margin-top:6px;
-  font-size:15px;
-}
+.station{ margin-top:6px; font-size:15px; }
 
 /* INFO */
 .info-row{
@@ -133,18 +113,11 @@ body{
   margin:45px 0;
 }
 
-.qr img{
-  width:110px;
-}
+.qr img{ width:110px; }
 
-.ref{
-  font-size:14px;
-  margin-top:6px;
-}
+.ref{ font-size:14px; margin-top:6px; }
 
-.date{
-  font-size:14px;
-}
+.date{ font-size:14px; }
 
 /* TITLE */
 .title{
@@ -158,7 +131,7 @@ body{
 /* CONTENT */
 .content{
   font-size:16px;
-  line-height:1.8;
+  line-height:1.9;
   text-align:justify;
 }
 
@@ -179,43 +152,26 @@ body{
   font-style:italic;
 }
 
-/* MOBILE FULL FIT */
+/* MOBILE (KEEP SAME DESIGN JUST SMALLER) */
 @media(max-width:600px){
 
-.header-inner span{ font-size:18px; }
-.nav-inner a{ font-size:12px; }
+.certificate{ padding:35px 25px; }
 
-.certificate{
-  padding:25px 18px;
-  box-shadow:none;
-}
+.cert-header h2{ font-size:18px; }
 
-.cert-header h2{
-  font-size:18px;
-}
+.station{ font-size:13px; }
 
-.station{ font-size:12px; }
+.content{ font-size:13px; line-height:1.6; }
 
-.content{
-  font-size:11px;
-  line-height:1.45;
-}
+.title{ font-size:16px; }
 
-.title{ font-size:14px; }
+.qr img{ width:90px; }
 
-.qr img{ width:80px; }
+.ref,.date{ font-size:12px; }
 
-.ref,.date{ font-size:10px; }
+.footer{ font-size:12px; }
 
-.footer{
-  flex-direction:column;
-  gap:10px;
-  align-items:center;
-  text-align:center;
-  font-size:10px;
-}
-
-.notice{ font-size:9px; }
+.notice{ font-size:10px; }
 
 }
 
@@ -231,7 +187,6 @@ body{
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div class="header-inner">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg">
@@ -239,7 +194,6 @@ body{
   </div>
 </div>
 
-<!-- NAV -->
 <div class="nav">
   <div class="nav-inner">
     <a href="#">Home</a>
@@ -249,7 +203,6 @@ body{
   </div>
 </div>
 
-<!-- PRINT BAR -->
 <div class="print-bar-wrap">
   <div class="print-bar">
     <div class="print-icon" onclick="window.print()">🖨️</div>
@@ -257,7 +210,6 @@ body{
 </div>
 
 <div class="wrapper">
-
 <div class="certificate">
 
 <div class="cert-header">
@@ -304,7 +256,7 @@ District Special Branch, {{ d['District'] }}
 
 <div>Seal</div>
 
-<div>
+<div style="text-align:right">
 Officer-in-Charge<br>
 {{ d['Police Station'] }} Police Station
 </div>
@@ -316,7 +268,6 @@ This is a digital copy of the unsigned certificate issued by Bangladesh Police O
 </div>
 
 </div>
-
 </div>
 
 </body>
