@@ -111,16 +111,18 @@ body{
 
 .cert-header img{
   width:70px;
-  margin-bottom:10px;
+  margin-bottom:12px;
 }
 
+/* 👇 HEADING BIGGER + 2 LINE LOOK */
 .cert-header h2{
-  font-size:20px;
-  font-weight:700;
+  font-size:24px;
+  font-weight:800;
+  line-height:1.35;
 }
 
 .station{
-  margin-top:5px;
+  margin-top:8px;
   font-size:15px;
 }
 
@@ -151,7 +153,7 @@ body{
   font-weight:700;
   text-decoration:underline;
   margin:40px 0;
-  font-size:19px;
+  font-size:20px;
 }
 
 /* CONTENT */
@@ -186,16 +188,16 @@ body{
 }
 
 .cert-header h2{
-  font-size:18px;
+  font-size:20px;
 }
 
 .content{
-  font-size:15px;
+  font-size:14px;
 }
 
 }
 
-/* ===== MOBILE ===== */
+/* ===== MOBILE (FONT HALF SIZE FEEL) ===== */
 @media(max-width:600px){
 
 .header{
@@ -203,63 +205,68 @@ body{
 }
 
 .header-inner span{
-  font-size:18px;
+  font-size:17px;
 }
 
 .nav-inner a{
-  font-size:13px;
+  font-size:12px;
 }
 
 .print-bar{
-  height:50px;
+  height:48px;
 }
 
 .certificate{
-  padding:30px 20px;
+  padding:28px 18px;
 }
 
 .cert-header img{
-  width:55px;
+  width:50px;
 }
 
 .cert-header h2{
-  font-size:16px;
+  font-size:18px;
 }
 
 .station{
-  font-size:13px;
+  font-size:12px;
 }
 
 .info-row{
-  margin:30px 0;
+  margin:25px 0;
 }
 
 .qr img{
-  width:85px;
+  width:75px;
 }
 
 .ref{
-  font-size:12px;
+  font-size:11px;
 }
 
 .date{
-  font-size:12px;
+  font-size:11px;
 }
 
 .title{
-  font-size:16px;
+  font-size:15px;
 }
 
+/* 👇 MAIN TEXT HALF LOOK */
 .content{
-  font-size:14px;
-  line-height:1.7;
+  font-size:12px;
+  line-height:1.6;
 }
 
 .footer{
-  font-size:12px;
+  font-size:11px;
   flex-direction:column;
-  gap:15px;
+  gap:14px;
   text-align:center;
+}
+
+.notice{
+  font-size:10px;
 }
 
 }
@@ -317,7 +324,10 @@ body{
 
 <div class="cert-header">
   <img src="https://upload.wikimedia.org/wikipedia/commons/8/84/Government_Seal_of_Bangladesh.svg">
-  <h2>GOVERNMENT OF THE PEOPLE'S REPUBLIC OF BANGLADESH</h2>
+  <h2>
+  GOVERNMENT OF THE PEOPLE'S REPUBLIC OF<br>
+  BANGLADESH
+  </h2>
   <div class="station">
     {{ d['Police Station'] }} Police Station<br>
     {{ d['District'] }}
@@ -340,7 +350,7 @@ body{
 <div class="title">POLICE CLEARANCE CERTIFICATE</div>
 
 <div class="content">
-The character and antecedents of <b>Mr. {{ d['NAME'] }}</b>, Son of <b>{{ d["Father's name"] }}</b>, Village/Area: <b>{{ d['Village'] }}</b>, P/O: <b>{{ d['Post Office'] }}</b>, Post Code: <b>{{ d['Post Code'] }}</b>, P/S: <b>{{ d['Police Station'] }}</b>, District: <b>{{ d['District'] }}</b>, holder of Bangladesh International Passport No: <b>{{ d['PASSPORT'] }}</b> Issued at <b>{{ d['Place of Issue'] }}</b> on <b>{{ d['IssueDate'] }}</b> have been verified and there is no adverse information against him on record.
+The character and antecedents of <b>{{ d['NAME'] }}</b>, Son of <b>{{ d["Father's name"] }}</b>, Village/Area: <b>{{ d['Village'] }}</b>, P/O: <b>{{ d['Post Office'] }}</b>, Post Code: <b>{{ d['Post Code'] }}</b>, P/S: <b>{{ d['Police Station'] }}</b>, District: <b>{{ d['District'] }}</b>, holder of Bangladesh International Passport No: <b>{{ d['PASSPORT'] }}</b> Issued at <b>{{ d['Place of Issue'] }}</b> on <b>{{ d['IssueDate'] }}</b> have been verified and there is no adverse information against him on record.
 
 <br><br>
 
