@@ -85,7 +85,7 @@ body{
 }
 
 .print-icon{
-  font-size:26px;   /* 👈 fallback printer icon */
+  font-size:26px;
   cursor:pointer;
 }
 
@@ -100,7 +100,7 @@ body{
   width:1100px;
   max-width:95%;
   background:#e9e7e5;
-  padding:70px 160px;   /* 👈 BIG MARGINS LEFT RIGHT */
+  padding:70px 160px;
   border:1px solid #bfbfbf;
   box-shadow:0 6px 20px rgba(0,0,0,.25);
 }
@@ -178,11 +178,88 @@ body{
   font-style:italic;
 }
 
-/* MOBILE */
+/* ===== TABLET ===== */
 @media(max-width:900px){
 
 .certificate{
-  padding:40px 30px;
+  padding:50px 60px;
+}
+
+.cert-header h2{
+  font-size:18px;
+}
+
+.content{
+  font-size:15px;
+}
+
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:600px){
+
+.header{
+  height:55px;
+}
+
+.header-inner span{
+  font-size:18px;
+}
+
+.nav-inner a{
+  font-size:13px;
+}
+
+.print-bar{
+  height:50px;
+}
+
+.certificate{
+  padding:30px 20px;
+}
+
+.cert-header img{
+  width:55px;
+}
+
+.cert-header h2{
+  font-size:16px;
+}
+
+.station{
+  font-size:13px;
+}
+
+.info-row{
+  margin:30px 0;
+}
+
+.qr img{
+  width:85px;
+}
+
+.ref{
+  font-size:12px;
+}
+
+.date{
+  font-size:12px;
+}
+
+.title{
+  font-size:16px;
+}
+
+.content{
+  font-size:14px;
+  line-height:1.7;
+}
+
+.footer{
+  font-size:12px;
+  flex-direction:column;
+  gap:15px;
+  text-align:center;
 }
 
 }
